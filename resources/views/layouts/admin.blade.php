@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>VentasApp | Laravel</title>
+  <title>CrudJuegos | Laravel</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -36,7 +36,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{route('Juegos.index')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -46,25 +46,24 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <div class="col-md-1"><a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
-      </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
+      </a></div>
+       <div class="col-md-10"><div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="{{ asset('image/user1-128x128.jpg') }}" class="user-image" alt="User Image">
+              <img src="{{ asset('image/myAvatar.png') }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Nombre Usuario</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="{{ asset('image/user1-128x128.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('image/myAvatar.png') }}" class="img-circle" alt="User Image">
 
                 <p>
                   Nombre Usuario
@@ -82,7 +81,9 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div></div>
+      <!-- Navbar Right Menu -->
+
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
@@ -107,84 +108,28 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="treeview active menu-open">
           <a href="#">
-            <i class="fa fa-link"></i> <span>Almacén</span>
+            <i class="fa fa-link"></i> <span>Juegos</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li>
-              <a href="">
+              <a href="{{route('vista')}}">
                 <i class="fa fa-circle-o"></i>
-                Artículos
+                Vista de juegos
               </a>
             </li>
             <li>
-              <a href="">
+            <a href="{{route('Juegos.index')}}">
                 <i class="fa fa-circle-o"></i>
-                Categorías
+                Vista de juegos Crud
               </a>
             </li>
           </ul>
         </li>
 
-        <li class="treeview active menu-open">
-          <a href="#">
-            <i class="fa fa-link"></i> <span>Compras</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href=" ">
-                <i class="fa fa-circle-o"></i>
-                Proveedores
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="fa fa-circle-o"></i>
-                Ingresos
-              </a>
-            </li>
-          </ul>
-        </li>
 
-        <li class="treeview active menu-open">
-          <a href="#">
-            <i class="fa fa-link"></i> <span>Ventas</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="">
-                <i class="fa fa-circle-o"></i>
-                Clientes
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-link"></i> <span>Acceso</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="#">
-                <i class="fa fa-circle-o"></i>
-                Listado
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
@@ -220,7 +165,7 @@
       <!-- 2018 -->
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2021 <a href="#">Carlos  Galeano</a>.</strong>
+    <strong>Copyright &copy; @php {{  echo date('Y'); }} @endphp <a href="#">Carlos  Galeano</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

@@ -79,6 +79,15 @@
                 </div>
             @endif
 
+            <div class="flex-center position-ref full-height">
+
+                <div class="top-right links">
+
+                        <a style="color:blue" href="{{ url('/Juegos') }}">Crud de Juegos</a>
+
+
+                </div>
+
             <div class="content">
                 <div class="title m-b-md">
                     Visualizacion de Juegos

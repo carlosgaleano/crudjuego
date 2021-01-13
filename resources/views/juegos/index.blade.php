@@ -13,7 +13,7 @@
 
 		</div>
 		<div class="col-md-2">
-			<a href="articulo/create" class="pull-right">
+			<a href="{{ route('Juegos.create')}}" class="pull-right">
 				<button class="btn btn-success">Crear Juegos</button>
 			</a>
 		</div>
@@ -24,26 +24,25 @@
 			<div class="table-responsive">
 				<table class="table table-striped table-hover">
 					<thead>
-						<th>Id</th>
-						<th>Nombre</th>
-						<th>Url</th>
-						<th>Stock</th>
-						<th>Url </th>
-						<th>descripcion</th>
-						<th>Url</th>
-						<th width="180">Opciones</th>
+						<th width="10%">Id</th>
+						<th width="15%">Nombre</th>
+						<th width="15%">Descripción</th>
+						<th width="15%">Url </th>
+						<th width="15%">Url Imagen</th>
+						<th width="15%">Activo</th>
+						<th width="15%">Opciones</th>
 					</thead>
 					<tbody>
 						@foreach($juegos as $juego)
 							<tr>
 								<td>{{ $juego->id }}</td>
 								<td>{{ $juego->name}}</td>
-								<td>{{ $juego->name }}</td>
-								<td>{{ $juego->name }}</td>
-								<td>{{ $juego->name }}</td>
-								<!-- <td>
-									<img src="{{ asset('imagenes/articulos/'.$juego->name) }}" alt="{{ $juego->name }}" height="100" width="100" class="img-thumbnail">
-								</td> -->
+								<td>{{ $juego->descripcion }}</td>
+								<td><a href="{{ $juego->url }}"  target="_blank" >link</a></td>
+
+								<td>
+									<img src="{{$juego->url_imagen }}" alt="{{ $juego->name }}" class="img-fluid " height="100" width="100" >
+								</td>
 								<td>{{ $juego->estatus }}</td>
 								<td>
 								<a href="{{route('Juegos.edit', $juego->id)}}">

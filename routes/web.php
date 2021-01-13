@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::resource('Juegos', 'juegoController');
+
+Route::get('/vista','juegoController@vista')->name('vista');
