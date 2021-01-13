@@ -41,12 +41,12 @@
 								<td>{{ $juego->name }}</td>
 								<td>{{ $juego->name }}</td>
 								<td>{{ $juego->name }}</td>
-								<td>
+								<!-- <td>
 									<img src="{{ asset('imagenes/articulos/'.$juego->name) }}" alt="{{ $juego->name }}" height="100" width="100" class="img-thumbnail">
-								</td>
+								</td> -->
 								<td>{{ $juego->estatus }}</td>
 								<td>
-									<a href="">
+								<a href="{{route('Juegos.edit', $juego->id)}}">
 										<button class="btn btn-info">Editar</button>
 									</a>
 									<a href="" data-target="#modal-delete-{{$juego->id}}" data-toggle="modal">
@@ -54,7 +54,7 @@
 									</a>
 								</td>
 							</tr>
-
+							@include('juegos.modal')
 						@endforeach
 					</tbody>
 				</table>
